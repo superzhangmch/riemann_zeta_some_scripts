@@ -1,9 +1,30 @@
 # riemann siegel 公式
 
-$$Z(t) \sim 2 \sum_{k=1}^{\nu(t)} \frac{1}{\sqrt{k}} \cos[\theta(t) - t \ln k] + R(t), \text{where} \nu(t) = \left\lfloor \sqrt{\frac{t}{2\pi}} \right\rfloor$$
+$$Z(t) \sim 2 \sum_{k=1}^{\nu(t)} \frac{1}{\sqrt{k}} \cos[\theta(t) - t \ln k] + R(t), \text{where}\ \nu(t) = \left\lfloor \sqrt{\frac{t}{2\pi}} \right\rfloor$$
 
+### θ(t)
+----
+
+
+### R(t)
+----
+
+$$
+\begin{cases}
+\psi(p) &= \frac{\cos\left[2\pi\left(p^2 - p - \frac{1}{16}\right)\right]}{\cos(2\pi p)} \\
+c_0(p) &= \psi(p) \\
+c_1(p) &= -\frac{\psi^{(3)}(p)}{96 \pi^2} \\
+c_2(p) &= \frac{\psi''(p)}{64 \pi^2} + \frac{\psi^{(6)}(p)}{18432 \pi^4} \\
+c_3(p) &= -\frac{\psi'(p)}{64 \pi^2} - \frac{\psi^{(5)}(p)}{3840 \pi^4} - \frac{\psi^{(9)}(p)}{5308416 \pi^6} \\
+c_4(p) &= \frac{\psi(p)}{128 \pi^2} + \frac{19\psi^{(4)}(p)}{24576 \pi^4} + \frac{11\psi^{(8)}(p)}{5898240 \pi^6} + \frac{\psi^{(12)}(p)}{2038431744 \pi^8} \\
+c_5(p) &= -\frac{5\psi^{(3)}(p)}{3072 \pi^4} - \frac{901\psi^{(7)}(p)}{82575360 \pi^6} - \frac{7\psi^{(11)}(p)}{849346560 \pi^8} - \frac{\psi^{(15)}(p)}{978447237120 \pi^{10}} \\
+\nu(t) &= \left\lfloor \sqrt{\frac{t}{2\pi}} \right\rfloor \\
+R(t) &= (-1)^{\nu(t)-1} \left( \frac{t}{2\pi} \right)^{-1/4} \times \sum_{k=0}^{\infty} c_k \left( \sqrt{\frac{t}{2\pi}} - \nu(t) \right) \left( \frac{t}{2\pi} \right)^{-k/2}
+\end{cases}
+$$
 
 ### 验算
+----
 
 python 简单实现后，感受下：
 
