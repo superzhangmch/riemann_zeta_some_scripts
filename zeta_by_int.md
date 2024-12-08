@@ -1,4 +1,4 @@
-# 计算 zeta(s): 通过积分
+# zeta(s) 解析延拓到全空间
 
 
 $\zeta(s) = \sum_{n=1}^{\infty} \frac 1 {n^s},\ \ real(s) > 1$ 可以解析延拓到除了 s=1 外的整个复空间(其中积分是围着正实轴： $+\infty \stackrel {实轴上方} {\rightarrow } 环绕原点0 \stackrel {实轴下方}{\rightarrow } +\infty$)：
