@@ -42,3 +42,7 @@ $\mu(n)$ 是莫比乌斯函数， { $\rho$ } 是按虚部大于 0 且升序的 z
 可见 Riemann 的精确公式确实很准（如果用更多零点参与计算，可以更准）。
 
 但是，对于不是特别巨大的数(10e17, 也不过1.34s)，竟然有算法（比如[github:primecount](https://github.com/kimwalisch/primecount)）直接快速求出 $\pi(x)$ 的精确值，可比上面 Riemann 精确公式要快多了。
+
+![image](https://github.com/user-attachments/assets/7a5dc170-ef8d-4512-9535-49f519bd0908)
+
+上面是用1000个零点，算0~20之间的 $\pi(x)$.
