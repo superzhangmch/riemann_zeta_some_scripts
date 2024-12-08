@@ -5,9 +5,26 @@ $$Z(t) \sim 2 \sum_{k=1}^{\nu(t)} \frac{1}{\sqrt{k}} \cos[\theta(t) - t \ln k] +
 ### θ(t)
 ----
 
+$$\theta(t) = \arg\left(\Gamma\left(\frac{1}{4} + \frac{it}{2}\right)\right) - \frac{\log \pi}{2} t$$
+
+但是看似简单，辐角是个多值函数，需要取对分支：据 https://en.wikipedia.org/wiki/Riemann%E2%80%93Siegel_theta_function 
+> for real values of t. Here the argument is chosen in such a way that a continuous function is obtained and θ(0)=0 holds, i.e., in the same way that the principal branch of the log-gamma function is defined.
+
+一般还是用它的渐进展开。见 https://arxiv.org/pdf/2004.00926 有：
+
+$$\begin{cases}
+\theta(t) \sim \frac{1}{2} t (\log (t / 2\pi) - 1) - \frac{\pi}{8} + \sum_{k=1}^{\infty} \frac{(1 - 2^{1-2k})|B_{2k}|}{4k(2k-1)t^{2k-1}} + \frac{1}{2} \arctan(e^{-\pi t}) \\
+\arctan(e^{-\pi t}) = e^{-\pi t} - \frac{1}{3} e^{-3\pi t} + \frac{1}{5} e^{-5\pi t} - \frac{1}{7} e^{-7\pi t} + \cdots
+\end{cases}$$
+
+对稍大的 t，arctan 项可省， $B_{2k}$ 是伯努利常数，于是展开就可得一般所见之：
+
+$$\theta(t) = -\frac{t}{2} \ln\left(\frac{2\pi}{t}\right) - \frac{t}{2} - \frac{\pi}{8} + \frac{1}{48t} + \frac{7}{5760t^3} + \frac{31}{80640t^5} + \ldots$$
 
 ### R(t)
 ----
+
+见：https://mathworld.wolfram.com/Riemann-SiegelFormula.html
 
 $$
 \begin{cases}
@@ -22,6 +39,15 @@ c_5(p) &= -\frac{5\psi^{(3)}(p)}{3072 \pi^4} - \frac{901\psi^{(7)}(p)}{82575360 
 R(t) &= (-1)^{\nu(t)-1} \left( \frac{t}{2\pi} \right)^{-1/4} \times \sum_{k=0}^{\infty} c_k \left( \sqrt{\frac{t}{2\pi}} - \nu(t) \right) \left( \frac{t}{2\pi} \right)^{-k/2}
 \end{cases}
 $$
+
+### Z(t) 与 zeta(s) 关系
+----
+
+见 https://mathworld.wolfram.com/Riemann-SiegelFunctions.html 有：
+
+$$Z(t) = e^{i \cdot \theta(t)} \zeta(\frac 1 2 + i \cdot t)$$
+
+从而可用来算 $\zeta(\frac 1 2 + i \cdot t)$.
 
 ### 验算
 ----
